@@ -4,7 +4,7 @@ import random
 number = random.randint(1, 100)
 attempts = 0
 
-print("🎯 Number Guessing Game")
+print("Number Guessing Game")
 print("I'm thinking of a number between 1 and 100.")
 
 while True:
@@ -16,5 +16,5 @@ while True:
     elif guess > number:
         print("Too high! Try again.")
     else:
-        print(f"🎉 Correct! You got it in {attempts} attempts.")
+        print(f"Correct! You got it in {attempts} attempts.")
         break
