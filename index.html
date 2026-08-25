@@ -5,17 +5,17 @@
     </title>
     <link rel="icon" type="image/png" href="Pictures/Logo.png">
         <style>
-            command {
+            #command {
                 width: 100%;
                 box-sizing: border-box;
-                background-color:(#111);
+                background-color: #111;
                 color: #00ff66;
                 border: 1px solid #00ff66;
                 font-family: monospace;
             }
             #terminal {
                 background-color: black;
-                color: rgb(4, 71, 15);
+                color: #0f6;
                 width: 40%;
                 border-radius: 5px;
                 padding: 10px;
@@ -36,7 +36,7 @@
             }
             h1 {
                 font-family: Georgia, serif;
-                width: 50%;
+                font-size: width, 75%;
             }
 
             h2 {
@@ -57,8 +57,7 @@
             <br>
             <a href="Code/WeLearn%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9.html">Game design 1</a><img src="Pictures/Russian Flag.png" alt="Russian Flag" width="50" height="50" align="center">
             <div id="terminal">
-                <div id="output">This is the websites terminal<br>
-                Type help to see what you can do.</div> 
+                <div id="output"></div> 
                 <input type="text" id="command" placeholder="Type command">
             </div>
         </body>
@@ -67,6 +66,13 @@
     const command = document.getElementById("command");
     const output = document.getElementById("output");
 
+    const commands = {
+        hello: "How goes you?",
+        about: "We have fun help eachother learn.",
+        games: "Sorry we dont have any games yet but we will soon.😢",
+        Join: "Join our group by sending me a message on discord. My username is: sainwolf2703",
+    };
+
     command.addEventListener("keydown", function(event) {
 
         if (event.key === "Enter") {
@@ -74,29 +80,37 @@
             let input = command.value.toLowerCase();
 
             if (input === "help") {
-                output.innerHTML += "<br>> help<br>Current commands: help, hello, about, clear, games";
-            }
-
-            else if (input === "hello") {
-                output.innerHTML += "<br>> hello<br>How goes you?";
-            }
-
-            else if (input === "about") {
-                output.innerHTML += "<br>> about<br>We have fun help eachother learn.";
-            }
-            else if (input === "games") {
-                output.innerHTML += "<br>> games<br>Sorry we dont have any games yet but we will soon.😢";
+                output.innerHTML += "<br>> help<br>Current commands: " 
+                    + Object.keys(commands).join(", ") 
+                    + ", help, clear";
             }
 
             else if (input === "clear") {
                 output.innerHTML = "";
             }
 
+            else if (commands[input]) {
+                output.innerHTML += "<br>> " + input + "<br>" 
+                    + commands[input];
+            }
+
             else {
-                output.innerHTML += "<br>> " + input + "<br>Unknown command.";
+                output.innerHTML += "<br>> " + input 
+                    + "<br>Unknown command.";
             }
 
             command.value = "";
         }
     });
+    const text = "This is the websites terminal\nType help to see what you can do.";
+    let i = 0;
+
+    function typeText() {
+        if (i < text.length) {
+            output.innerHTML += text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
+            i++;
+            setTimeout(typeText, 50);
+        }
+    }
+    typeText();
 </script>
