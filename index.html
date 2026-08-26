@@ -3,14 +3,16 @@
 <head>
     <title>CODERS VERSE
     </title>
-    <link rel="icon" type="image/png" href="Pictures/CV logo v1.png">
+    <link rel="icon" type="image/png" href="Pictures/CV-logo-v2.png">
         <style>
             .container {
                 width: 60%;
                 max-width: 1000px;
+                height: auto;
                 margin: 0 auto;
                 border-left: solid 3px;
                 border-right: solid 3px;
+                border-bottom: solid 3px;
                 padding: 5px;
                 border-image: linear-gradient(to bottom, rgba(17, 6, 58, 0.568), #000000)1;
             }
@@ -82,15 +84,17 @@
                     about who we are allowing us the freedom to be us and express ourselves with certainty and confedience.
                 </p>
             <h3>Our lead developers:</h3>
-                <p><ul>
-                    <li>Sainwolf</li>
-                    <li>BubleeMan</li>
-                </ul>
+                <p>
+                    <ul>
+                        <li>Sainwolf</li>
+                        <li>BubleeMan</li>
+                    </ul>
             <h3>Current Projects:</h3>
-                <ul>
-                    <li></li>
+                    <ul>
+                        <li><a href="Code/BubleeMan-Page.html" class="custom-link">BubleeMan's Projects</a></li>
+                        <li>Still development<img src="Pictures/Worker2.png" width="10%" height="10%" align="center"></li>
+                    </ul>
                 </p>
-            
 
             <div id="terminal">
                 <div id="output"></div> 
@@ -99,10 +103,43 @@
         </div>
     </body>
 </html>
-<script>
-    const command = document.getElementById("command");
-    const output = document.getElementById("output");
+<script src="https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.js"></script>
 
+<script>
+const command = document.getElementById("command");
+const output = document.getElementById("output");
+
+let pyodide;
+
+async function loadPython() {
+    pyodide = await loadPyodide();
+
+    pyodide.setStdout({
+        batched: (text) => {
+            pythonPrint(text);
+        }
+    });
+
+    console.log("Python loaded!");
+}
+loadPython();
+
+async function runPython(code) {
+    if (!pyodide) {
+        output.innerHTML += "<br>Python is still loading...";
+        return;
+    }
+
+    try {
+        await pyodide.runPythonAsync(code);
+    } 
+    catch (error) {
+        output.innerHTML += "<br>" + error;
+    }
+}
+function pythonPrint(text) {
+    output.innerHTML += "<br>" + text;
+}
     const commands = {
         hello: "Hi there!",
         about: "We have fun helping eachother learn.",
@@ -132,8 +169,8 @@
                 typeResponse(commands[input]);
             }
             else {
-                output.innerHTML += "<br>> " + input + "<br>";
-                 typeResponse("Unknown command.");
+                output.innerHTML += "<br>> " + command.value + "<br>";
+                runPython(command.value);
             }
             command.value = "";
         }
