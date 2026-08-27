@@ -1,20 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CODERS VERSE
-    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CODE-VERSE</title>
     <link rel="icon" type="image/png" href="Pictures/CV-logo-v2.png">
         <style>
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: rgba(90, 62, 194, 0.568);
+                color: white;
+                text-decoration: none;
+                border: 2px solid white;
+                font-family: monospace;
+                font-size: clamp(15px, 1.5vw, 30px);
+                transition: opacity 0.3s;
+            }
+
+            .button:hover {
+                opacity: 0.5;
+            }
+            .navbar {
+    			position: fixed;
+				top: 0;
+   				left: 0;
+   				width: 100%;
+    			background-color: #222;
+    			display: flex;
+    			justify-content: center;
+    			gap: 40px;
+    			padding: 15px 0;
+    			z-index: 1000;
+			}
             .container {
                 width: 60%;
                 max-width: 1000px;
-                height: auto;
                 margin: 0 auto;
-                border-left: solid 3px;
-                border-right: solid 3px;
-                border-bottom: solid 3px;
+                margin-top: 95px;
+                border-left: solid 5px;
+                border-right: solid 5px;
+                border-top: solid 5px;
                 padding: 5px;
-                border-image: linear-gradient(to bottom, rgba(17, 6, 58, 0.568), #000000)1;
+                border-image: repeating-linear-gradient(45deg, rgba(90, 62, 194, 0.568) 15px, rgba(36, 14, 114, 0.568) 20px, #140b3d 25px)1;
             }
             #command {
                 width: 100%;
@@ -27,20 +56,28 @@
             #terminal {
                 background-color: black;
                 color: #01461d;
-                width: 15%;
+                width: min(200px, 95%);
+                max-width: min(200px, 95%);
+                margin: 0 auto;
+                margin-top: 80px;
+                margin-left: 0%;
                 border-radius: 5px;
                 padding: 10px;
                 font-family: monospace;
                 font-size: clamp(10px, 1.5vw, 18px);
                 border: 3px solid #01461d;
 
-                position: absolute;
-                top: 10px;
-                right: 10px;
+                position: fixed;
+                Top: 10px;
+                left: 10px;
 
             }
             #output {
-                min-height: 100px;
+                height: 250px;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
                 margin-bottom: 10px;
             }
             body { 
@@ -68,33 +105,32 @@
             p {
                 font-family: arial;
                 font-size: clamp(18px, 1.5vw, 38px);
-                text-align: match-parent;
+                text-align: justify;
                 max-width: 700px;
             }
         </style>
 </head>
     <body>
+        <nav class="navbar"><a href="https://sainwolf2703.github.io/HTML-LINE/" class="button">Home</a><a href="BubleeMan-Page.html" class="button">Projects</a></nav>
         <div class="container">
-            <h1><b>THIS IS THE START OF THE CODERS VERSE.</b></h1>
-        
-            <h2>The purpose</h2>
-
-                <p>
-                    Our goal is to Make a place where poeple can;<br>learn, code, talk and feel glad
-                    about who we are allowing us the freedom to be us and express ourselves with certainty and confedience.
-                </p>
-            <h3>Our lead developers:</h3>
-                <p>
+                <h1><b>THIS IS THE START OF THE CODE-VERSE.</b></h1>
+                <h2>Our lead developers:</h2>
                     <ul>
                         <li>Sainwolf</li>
                         <li>BubleeMan</li>
                     </ul>
-            <h3>Current Projects:</h3>
-                    <ul>
-                        <li><a href="Code/BubleeMan-Page.html" class="custom-link">BubleeMan's Projects</a></li>
-                        <li>Still development<img src="Pictures/Worker2.png" width="10%" height="10%" align="center"></li>
+                <h2>Current projects</h2>
+
+                    <ul id="project-list">
+                        <li>Loading...</li>
                     </ul>
-                </p>
+                <h3>Learn More?</h3>
+                    <ul>
+                        <li>About our website:<br><a href="Code/About-Page.html">Code-Verse</a></li>
+                        <li>About our current games:<br><a href="Code/Contact-Page.html">Our games</a></li>
+                        <li>Bubleeman's projects:<br><a href="Code/BubleeMan-Page.html">BubleeMan</a></li>
+                        <li>Sainwolf's projects:<br><a href="Code/Sainwolf2703-Page.html">Sainwolf</a></li>
+                    </ul>
 
             <div id="terminal">
                 <div id="output"></div> 
@@ -106,25 +142,25 @@
 <script src="https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.js"></script>
 
 <script>
-const command = document.getElementById("command");
-const output = document.getElementById("output");
+    const command = document.getElementById("command");
+    const output = document.getElementById("output");
 
-let pyodide;
+    let pyodide;
 
-async function loadPython() {
+    async function loadPython() {
     pyodide = await loadPyodide();
 
     pyodide.setStdout({
         batched: (text) => {
             pythonPrint(text);
         }
-    });
+     });
 
-    console.log("Python loaded!");
-}
-loadPython();
+        console.log("Python loaded!");
+    }
+    loadPython();
 
-async function runPython(code) {
+    async function runPython(code) {
     if (!pyodide) {
         output.innerHTML += "<br>Python is still loading...";
         return;
@@ -136,19 +172,19 @@ async function runPython(code) {
     catch (error) {
         output.innerHTML += "<br>" + error;
     }
-}
-function pythonPrint(text) {
-    output.innerHTML += "<br>" + text;
-}
-    const commands = {
-        hello: "Hi there!",
-        about: "We have fun helping eachother learn.",
-        games: "we have one game in development.",
-        join: "Join our group by sending me a message on discord. My username is: sainwolf2703",
-        colaborators: "We have two colaborators on this project.",
-        bubleeman: "Game developer 1 and graphic designer",
-        sainwolf: "Game developer 2 and webpage designer",
-    };
+    }
+    function pythonPrint(text) {
+        output.innerHTML += "<br>" + text;
+    }
+        const commands = {
+            hello: "Hi there!",
+            about: "We have fun helping eachother learn.",
+            games: "we have one game in development.",
+            join: "Join our group by sending me a message on discord. My username is: sainwolf2703",
+            colaborators: "We have two colaborators on this project.",
+            bubleeman: "Game developer 1 and graphic designer",
+            sainwolf: "Game developer 2 and webpage designer",
+        };
 
     command.addEventListener("keydown", function(event) {
 
@@ -212,4 +248,27 @@ function pythonPrint(text) {
 
     type();
 }
+async function updateProjects() {
+    try {
+        const response = await fetch("Learn or code helper/Projects.json?t=" + Date.now());
+
+        const data = await response.json();
+
+        const list = document.getElementById("project-list");
+
+        list.innerHTML = "";
+
+        data.projects.forEach(project => {
+            const li = document.createElement("li");
+            li.textContent = project;
+            list.appendChild(li);
+        });
+
+    } catch (error) {
+        console.error("Could not load projects:", error);
+    }
+}
+ updateProjects();
+ setInterval(updateProjects, 5000);
+
 </script>

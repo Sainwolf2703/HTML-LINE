@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="BubleeMan page with links" content="Code Verse boilerplate">
-   <meta name="keywords" content="HTML5, BubleeMan, Template">
-   <link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="favicon.ico">
+   	<meta charset="UTF-8">
+   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   	<meta name="BubleeMan page with links" content="Code Verse boilerplate">
+   	<meta name="keywords" content="HTML5, BubleeMan, Template">
+
     <title>BubleeMan
     </title>
 	<link rel="icon" type="image/png" href="..//Pictures/CV-logo-v2.png">
-        <style>
-            body { 
-                background: linear-gradient(to bottom, black, rgba(17, 6, 58, 0.568));
-                background-attachment:fixed;
-                font-size: 13px;
-				color: white;
-				margin: 0;
-    			padding-top: 40px;
-				
-            }
 
+    	<style>
 			.custom-link {
   				color: #3498db;
   				text-decoration: underline;
   				font-weight: bold;
 			}
-				
+			.project-list {
+   				display: flex;
+    			justify-content: center;
+			}
 			.project-link {
     			display: block;
     			margin: 0px 0;
@@ -47,9 +43,29 @@
 				text-decoration: none;
    				font-size: clamp(20px, 1.5vw, 25px);
 			}
-			.navbar a:hover {
-    			text-decoration: underline;
+			.button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: rgba(90, 62, 194, 0.568);
+                color: white;
+                text-decoration: none;
+                border: 2px solid white;
+                font-family: monospace;
+                font-size: clamp(15px, 1.5vw, 30px);
+                transition: opacity 0.3s;
+            }
+            .button:hover {
+                opacity: 0.5;
 			}
+			body { 
+                background: linear-gradient(to bottom, black, rgba(17, 6, 58, 0.568));
+                background-attachment:fixed;
+                font-size: 13px;
+				color: white;
+				margin: 0;
+    			padding-top: 80px;
+				
+            }
             h1 {
 				text-align: center;
                 font-family: monospace;
@@ -75,27 +91,26 @@
         </style>
 </head>
     <body>
+		<nav class="navbar">
+    		<a href="https://sainwolf2703.github.io/HTML-LINE/" class="button">Home</a>
+    		<a href="BubleeMan-Page.html" class="button">Projects</a>
+    		<a href="About-Page.html" class="button">About</a>
+		</nav>
 
-<nav class="navbar">
-    <a href="https://sainwolf2703.github.io/HTML-LINE/">Home</a>
-    <a href="BubleeMan-Page.html">Projects</a>
-    <a href="About-Page.html">About</a>
-</nav>
-
-        <h1>BubleeMan's Projects.</h1>
-        <h2><u>Godot Projects</u></h2>    
-            <p>Platformer Game (Credits: Brackeys)</p>
-		<b><h3>What do I do in Godot? </h3></b>
-			<p>I mainly collborate with Sainwolf, on bigger godot projects, but I do make smaller experimental projects by myself.</p>
-        <h2><u>Castle - Make and Play Projects</u></h2>
-		<div style="display: flex; justify-content: center;">
-			<ul>
-			<li><p class="project-link"><a href="https://s.castle.xyz/hnHgX_CDZ7SW" class="custom-link">Kill'Em Zombies</a> <--- Main Game </p>
-			</ul>
-		</div>
-			<b><h3>What is Castle?					</h3></b>
+        	<h1>BubleeMan's Projects.</h1>
+       		<h2><u>Godot Projects</u></h2>    
+            	<p>Platformer Game (Credits: <a href="https://www.youtube.com/user/Brackeys" target="_blank" rel="noopener noreferrer">Brackeys</a>)</p>
+			<h3><b>What do I do in Godot? </b></h3>
+				<p>I mainly collborate with Sainwolf, on bigger godot projects, but I do make smaller experimental projects by myself.</p>
+        	<h2><u>Castle - Make and Play Projects</u></h2>
+			<div class="project-list">
+				<ul>
+					<li><p class="project-link"><a href="https://s.castle.xyz/hnHgX_CDZ7SW" class="custom-link" rel="noopener noreferrer" target="_blank">Kill'Em Zombies</a> <--- Main Game </p>
+				</ul>
+			</div>
+			<h3><b>What is Castle?					</b></h3>
 				<p>Castle - Make and Play is an app on Mobile mainly which can be used to play or create games for others to play.<br> There is a large community of people who on the app that push the boundaries of the app constantly.</p>
-			<b><h3>What do I do on Castle?					</h3></b>
+			<h3><b>What do I do on Castle?					</b></h3>
 					<p>I have made mainly  projects on Castle that are full games and tutorials.<br> I also have a Youtube Channel of the tutorials and updates of the games I make.</p>
     </body>
 </html>
