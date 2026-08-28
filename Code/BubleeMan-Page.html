@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="style.css">
-	<link rel="icon" href="favicon.ico">
    	<meta charset="UTF-8">
    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
    	<meta name="BubleeMan page with links" content="Code Verse boilerplate">
@@ -13,18 +11,24 @@
 	<link rel="icon" type="image/png" href="..//Pictures/CV-logo-v2.png">
 
     	<style>
-			.custom-link {
-  				color: #3498db;
-  				text-decoration: underline;
-  				font-weight: bold;
-			}
 			.project-list {
    				display: flex;
-    			justify-content: center;
+    			justify-content: center	;
+
 			}
 			.project-link {
+				color: #3498db; 
+				font-family: monospace;
     			display: block;
     			margin: 0px 0;
+				font-size: clamp(20px, 1.5vw, 40px);
+				 font-weight: bold;
+			}
+			.custom-link {
+				color: #3498db; 
+				font-family: monospace;
+				font-size: clamp(15px, 1.5vw, 20px);
+				 font-weight: bold;
 			}
 			.navbar {
     			position: fixed;
@@ -62,55 +66,71 @@
                 background-attachment:fixed;
                 font-size: 13px;
 				color: white;
-				margin: 0;
+				margin: 5;
     			padding-top: 80px;
 				
             }
             h1 {
+				margin-top: 2;
+  				margin-bottom: 2;
 				text-align: center;
                 font-family: monospace;
-                font-size: clamp(35px, 1.5vw, 40px);
+                font-size: clamp(28px, 4.5vw, 40px);
             }
             h2 {
+				margin-top: 1;
+  				margin-bottom: 1;
 				font-family: monospace;
                 font-size: clamp(22px, 1.5vw, 28px);
 				text-align: center;
             }
-			h3 {
+				h3 {
+				margin-top: 2;
+  				margin-bottom: 2;
 				font-family: monospace;
 				text-align: center;
 				font-family: monospace;
-                font-size: clamp(22px, 1.5vw, 28px);
+            font-size: clamp(22px, 1.5vw, 28px);
             }
             p {
-				margin: 2px 0;
+				margin-top: 0;
+  				margin-bottom: 0;
 				text-align: center;
 				font-family: arial;
-                font-size: clamp(13px, 1.5vw, 20px);
+                font-size: clamp(15px, 1.5vw, 20px);
             }
         </style>
 </head>
     <body>
 		<nav class="navbar">
-    		<a href="https://sainwolf2703.github.io/HTML-LINE/" class="button">Home</a>
+			<a href="https://sainwolf2703.github.io/HTML-LINE/" class="button">Home</a>
     		<a href="BubleeMan-Page.html" class="button">Projects</a>
     		<a href="About-Page.html" class="button">About</a>
 		</nav>
 
         	<h1>BubleeMan's Projects.</h1>
-       		<h2><u>Godot Projects</u></h2>    
-            	<p>Platformer Game (Credits: <a href="https://www.youtube.com/user/Brackeys" target="_blank" rel="noopener noreferrer">Brackeys</a>)</p>
-			<h3><b>What do I do in Godot? </b></h3>
-				<p>I mainly collborate with Sainwolf, on bigger godot projects, but I do make smaller experimental projects by myself.</p>
-        	<h2><u>Castle - Make and Play Projects</u></h2>
+       		<h2><u>Godot Projects</u></h2>
 			<div class="project-list">
 				<ul>
-					<li><p class="project-link"><a href="https://s.castle.xyz/hnHgX_CDZ7SW" class="custom-link" rel="noopener noreferrer" target="_blank">Kill'Em Zombies</a> <--- Main Game </p>
+					<li>
+            	<p>Platformer Game (Credits:
+<a href="https://www.youtube.com/user/Brackeys" target="_blank" class="custom-link">Brackeys</a>)
+</p>
+				</ul>
+			</div>
+			
+			<h3><b>What do I do in Godot? </b></h3>
+				<p>I mainly collborate with Sainwolf, on bigger godot projects, but I do make smaller experimental projects by myself.</p>
+        	<h2 style="font-size: 18px;"><u>Castle - Make and Play Projects</u></h2>
+			<div class="project-list">
+				<ul>
+					<li>
+						<a href="https://s.castle.xyz/hnHgX_CDZ7SW" target="_blank" class="project-link">Kill'Em Zombies</a>
 				</ul>
 			</div>
 			<h3><b>What is Castle?					</b></h3>
 				<p>Castle - Make and Play is an app on Mobile mainly which can be used to play or create games for others to play.<br> There is a large community of people who on the app that push the boundaries of the app constantly.</p>
 			<h3><b>What do I do on Castle?					</b></h3>
-					<p>I have made mainly  projects on Castle that are full games and tutorials.<br> I also have a Youtube Channel of the tutorials and updates of the games I make.</p>
+					<p>I have made mainly  projects on Castle that are full games and tutorials. I also have a Youtube Channel of the tutorials and updates of the games I make.</p>
     </body>
 </html>
