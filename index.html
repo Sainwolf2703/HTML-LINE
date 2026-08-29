@@ -11,9 +11,10 @@
                 display: inline-block;
                 padding: 10px 20px;
                 background-color: rgba(90, 62, 194, 0.568);
-                color: white;
+                color: #39d879;
                 text-decoration: none;
-                border: 2px solid white;
+                border: 2px solid #0f6;
+                border-radius: 20px;
                 font-family: monospace;
                 font-size: clamp(15px, 1.5vw, 30px);
                 transition: opacity 0.3s;
@@ -21,6 +22,7 @@
 
             .button:hover {
                 opacity: 0.5;
+                transition: glow 0.7s;
             }
             .navbar {
     			position: fixed;
@@ -35,15 +37,15 @@
     			z-index: 1000;
 			}
             .container {
-                width: 60%;
-                max-width: 1000px;
-                margin: 0 auto;
-                margin-top: 95px;
-                border-left: solid 5px;
-                border-right: solid 5px;
-                border-top: solid 5px;
-                padding: 5px;
-                border-image: repeating-linear-gradient(45deg, rgba(90, 62, 194, 0.568) 15px, rgba(36, 14, 114, 0.568) 20px, #140b3d 25px)1;
+                width: min(90%, 1000px);
+                margin: 100px auto 40px;
+                padding: 30px;    
+                background: rgba(10, 5, 30, 0.65);
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                border: 2px solid rgba(90, 62, 194, 0.6);
+                border-radius: 12px;
+                box-shadow:0 0 20px rgba(90, 62, 194, 0.25)inset 0 0 20px rgba(90, 62, 194, 0.05);
             }
             #command {
                 width: 100%;
@@ -55,23 +57,26 @@
             }
             #terminal {
                 background-color: black;
-                color: #01461d;
-                width: min(200px, 95%);
-                max-width: min(200px, 95%);
+                color: #39d879;
                 margin: 0 auto;
-                margin-top: 80px;
-                margin-left: 0%;
+                margin-left: 20px;
                 border-radius: 5px;
                 padding: 10px;
                 font-family: monospace;
                 font-size: clamp(10px, 1.5vw, 18px);
                 border: 3px solid #01461d;
-
-                position: fixed;
-                Top: 10px;
-                left: 10px;
-
-            }
+                right: 20px;
+                bottom: 20px;
+                top: auto;
+                left: auto;
+                width: min(320px, 85vw);
+                max-width: none;
+                background: rgba(0, 0, 0, 0.9);
+                border: 2px solid #01461d;
+                border-radius: 8px;
+                box-shadow: 0 0 20px rgba(0, 255, 80, 0.15);
+                z-index: 1000;
+            }   
             #output {
                 height: 250px;
                 overflow-y: scroll;
@@ -80,65 +85,126 @@
                 word-wrap: break-word;
                 margin-bottom: 10px;
             }
+            .projects {
+                margin-left: clamp(40px, 1.5vw, 80px);
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 20px;
+                }
+            .project-card {
+                padding: 20px;
+                background: rgba(20, 10, 55, 0.7);
+                border: 1px solid rgba(90, 62, 194, 0.6);
+                border-radius: 10px;
+                transition: 
+                    transform 0.3s,
+                    box-shadow 0.3s,
+                    border-color 0.3s;
+            }
+            .project-card:hover {
+                transform: translateY(-5px);
+                border-color: #8b6cff;
+                box-shadow: 0 0 20px rgba(90, 62, 194, 0.5);
+            }
             body { 
                 min-height:100vh;
                 background: linear-gradient(to bottom, black, rgba(17, 6, 58, 0.568));
                 background-attachment:fixed;
-                border: 3px solid black;
                 font-size: clamp(15px, 1.5vw, 30px);
-				color: white;
+				color: #39d879;
                 font-family: monospace;
                 margin: 0;
             }
+            a {
+                 color: #9b7cff;
+                transition: 0.2s;
+            }
+            a:hover {
+                color: white;
+                text-shadow: 0 0 10px #7c5cff;
+            }
             h1 {
                 font-family: monospace;
+                color: #5035a1;
+                text-shadow: 0 0 10px rgba(138, 116, 211, 0.5);
                 font-size: clamp(40px, 1.5vw, 50px);
             }
             h2 {
 				font-family: monospace;
                 font-size: clamp(27px, 1.5vw, 37px);
+                color: #7d68bb;
+                text-shadow: 0 0 10px rgba(120, 80, 255, 0.5);
             }
             h3 {
 				font-family: monospace;
                 font-size: clamp(22px, 1.5vw, 32px);
+                color: #7a68b1;
+                text-shadow: 0 0 10px rgba(120, 80, 255, 0.5);
             }
             p {
                 font-family: arial;
+                color:#01461d;
                 font-size: clamp(18px, 1.5vw, 38px);
                 text-align: justify;
                 max-width: 700px;
             }
+            .hero {
+                text-align: center;
+                padding: 40px 10px;
+                border-bottom: 1px solid rgba(90, 62, 194, 0.5);
+                margin-top: clamp(40px, 6vw, 75px);
+            }   
+            .hero h1 {
+                font-size: clamp(40px, 6vw, 75px);
+                margin: 0;
+                text-shadow: 0 0 15px rgba(120, 80, 255, 0.8);
+            }
+            .hero p {
+                margin: 10px auto;
+                text-align: center;
+                color: #39d879;
+            }
+            .hero span {
+                color: #244d34;
+            }
         </style>
 </head>
     <body>
+        <section class="hero">
+            <h1>&lt;CODE-VERSE&gt;</h1>
+                <p>Learn. Play. Stupid-Stuff.</p>
+                <span>Welcome to our abode far from unwanted eyes.</span>
+        </section>
         <nav class="navbar"><a href="https://sainwolf2703.github.io/HTML-LINE/" class="button">Home</a><a href="BubleeMan-Page.html" class="button">Projects</a></nav>
         <div class="container">
-                <h1><b>THIS IS THE START OF THE CODE-VERSE.</b></h1>
-                <h2>Our lead developers:</h2>
-                    <ul>
-                        <li>Sainwolf</li>
-                        <li>BubleeMan</li>
-                    </ul>
-                <h2>Current projects</h2>
-
-                    <ul id="project-list">
-                        <li>Loading...</li>
-                    </ul>
-                <h3>Learn More?</h3>
-                    <ul>
-                        <li>About our website:<br><a href="Code/About-Page.html">Code-Verse</a></li>
-                        <li>About our current games:<br><a href="Code/Contact-Page.html">Our games</a></li>
-                        <li>Bubleeman's projects:<br><a href="Code/BubleeMan-Page.html">BubleeMan</a></li>
-                        <li>Sainwolf's projects:<br><a href="Code/Sainwolf2703-Page.html">Sainwolf</a></li>
-                    </ul>
-
-            <div id="terminal">
+            <h1><b>THIS IS THE START OF THE CODE-VERSE.</b></h1>
+            <h2>Our lead developers:</h2>
+                <ul>
+                    <li>Sainwolf</li>
+                    <li>BubleeMan</li>
+                </ul>
+            <h2>Current projects</h2>
+                <div id="project-list" class="projects">
+                    <div class="project-card">
+                        <h3>Project Name</h3>
+                        <p>Project description...</p>
+                    </div>
+                </div>
+            <h3>Learn More?</h3>
+                <ul>
+                    <li>About our website:<br><a href="Code/About-Page.html">Code-Verse</a></li>
+                    <li>About our current games:<br><a href="Code/Contact-Page.html">Our games</a></li>
+                    <li>Bubleeman's projects:<br><a href="Code/BubleeMan-Page.html">BubleeMan</a></li>
+                    <li>Sainwolf's projects:<br><a href="Code/Sainwolf2703-Page.html">Sainwolf</a></li>
+                </ul>
+            
+            <h2>This is our terminal</h2><div id="terminal">
                 <div id="output"></div> 
                 <input type="text" id="command" placeholder="Type command">
             </div>
         </div>
-    </body>
-</html>
+            
+    
 <script src="https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.js"></script>
 
 <script>
@@ -211,7 +277,7 @@
             command.value = "";
         }
     });
-    const text = "This is the websites terminal\nType help to see what you can do.";
+    const text = "Welcome to our terminal.\nType help to see what you can do.";
     let i = 0;
     function typeText() {
         if (i < text.length) {
@@ -272,3 +338,5 @@ async function updateProjects() {
  setInterval(updateProjects, 5000);
 
 </script>
+</body>
+</html>
