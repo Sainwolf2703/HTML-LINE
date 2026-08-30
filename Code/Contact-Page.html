@@ -1,1 +1,81 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <style>
+        .container{
+            width: min(90%, 1000px);
+            margin: 100px auto 40px;
+            padding: 30px;    
+            background: rgba(10, 5, 30, 0.65);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(90, 62, 194, 0.6);
+            border-radius: 12px;
+            box-shadow:0 0 20px rgba(90, 62, 194, 0.25)inset 0 0 20px rgba(90, 62, 194, 0.05);
+        }
+        
+        body { 
+            min-height:100vh;
+            background: linear-gradient(to bottom, black, rgba(17, 6, 58, 0.568));
+            background-attachment:fixed;
+            font-size: clamp(15px, 1.5vw, 30px);
+			color: #39d879;
+            font-family: monospace;
+            margin: 0;
+        }
+        a {
+            color: #9b7cff;
+            transition: 0.2s;
+        }
+        a:hover {
+            color: white;
+            text-shadow: 0 0 10px #7c5cff;
+        }
+        h1 {
+            font-family: monospace;
+            color: #5035a1;
+            text-shadow: 0 0 10px rgba(138, 116, 211, 0.5);
+            font-size: clamp(40px, 1.5vw, 50px);
+        }
+        h2 {
+			font-family: monospace;
+            font-size: clamp(27px, 1.5vw, 37px);
+            color: #7d68bb;
+            text-shadow: 0 0 10px rgba(120, 80, 255, 0.5);
+        }
+        h3 {
+			font-family: monospace;
+            font-size: clamp(22px, 1.5vw, 32px);
+            color: #7a68b1;
+            text-shadow: 0 0 10px rgba(120, 80, 255, 0.5);
+        }
+        p {
+            font-family: arial;
+            color:#01461d;
+            font-size: clamp(18px, 1.5vw, 38px);
+            text-align: justify;
+            max-width: 700px;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>if you have any suggestions or want to get hold of us, reach out to us.</p>
+        
+        <div class="contact-info">
+            <h2>Email</h2>
+            <p><a href="mailto:">contact@company.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
