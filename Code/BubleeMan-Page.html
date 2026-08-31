@@ -11,6 +11,20 @@
 	<link rel="icon" type="image/png" href="..//Pictures/CV-logo-v2.png">
 
     	<style>
+			
+			.container {
+                width: min(90%, 1000px);
+                margin: 100px auto 40px;
+                padding: 30px;    
+                background: rgba(10, 5, 30, 0.65);
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                border: 2px solid rgba(90, 62, 194, 0.6);
+                border-radius: 12px;
+                box-shadow:0 0 20px rgba(90, 62, 194, 0.25)inset 0 0 20px rgba(90, 62, 194, 0.05);
+				
+			}
+			
 			.project-list {
    				display: flex;
     			justify-content: center	;
@@ -51,15 +65,17 @@
                 display: inline-block;
                 padding: 10px 20px;
                 background-color: rgba(90, 62, 194, 0.568);
-                color: white;
+                color: #39d879;
                 text-decoration: none;
-                border: 2px solid white;
+                border: 2px solid #0f6;
+                border-radius: 20px;
                 font-family: monospace;
                 font-size: clamp(15px, 1.5vw, 30px);
                 transition: opacity 0.3s;
             }
             .button:hover {
                 opacity: 0.5;
+                transition: glow 0.7s;
 			}
 			body { 
                 background: linear-gradient(to bottom, black, rgba(17, 6, 58, 0.568));
@@ -102,11 +118,12 @@
         </style>
 </head>
     <body>
-		<nav class="navbar">
+		
+        <div class="container">
 			<a href="https://sainwolf2703.github.io/HTML-LINE/" class="button">Home</a>
     		<a href="BubleeMan-Page.html" class="button">Projects</a>
     		<a href="About-Page.html" class="button">About</a>
-		</nav>
+		</div>
 
         	<h1>BubleeMan's Projects.</h1>
        		<h2><u>Godot Projects</u></h2>
