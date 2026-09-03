@@ -6,17 +6,24 @@
         <link rel="icon" type="image/png" href="../Pictures/CV-logo-v2.png">
         <style>
             .container {
-                width: 60%;
+                width: min(90%, 800px);
                 max-width: 1000px;
                 margin: 0 auto;
+                background: rgba(10, 5, 30, 0.65);
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                border: 2px solid rgba(90, 62, 194, 0.6);
+                border-radius: 12px;
+                box-shadow:0 0 20px rgba(90, 62, 194, 0.25)inset 0 0 20px rgba(90, 62, 194, 0.05);
             }
             .button {
                 display: inline-block;
                 padding: 10px 20px;
                 background-color: rgba(90, 62, 194, 0.568);
-                color: white;
+                color: #39d879;
                 text-decoration: none;
-                border: 2px solid white;
+                border: 2px solid #0f6;
+                border-radius: 20px;
                 font-family: monospace;
                 font-size: clamp(15px, 1.5vw, 30px);
                 transition: opacity 0.3s;
@@ -48,40 +55,68 @@
                 margin: 0;
                 margin-top: 80px;
                 text-align: center;
+                color: #39d879;
             }
             h1 {
                 font-family: monospace;
                 font-size: clamp(40px, 1.5vw, 50px);
                 text-align: center;
                 text-decoration: bold;
+                color: #5035a1;
             }
             h2 {
 				font-family: monospace;
                 font-size: clamp(27px, 1.5vw, 37px);
                 text-align: center;
                 text-decoration: bold;
+                color: #7d68bb;
             }
             h3 {
 				font-family: monospace;
                 font-size: clamp(22px, 1.5vw, 32px);
                 text-align: center;
                 text-decoration: bold;
+                color: #7a68b1;
             }
             p {
                 font-family: arial;
                 font-size: clamp(18px, 1.5vw, 38px);
                 text-align: center;
+                color: #39d879;
+                text-shadow: 2px 2px  5px rgba(108, 43, 134, 0.5);
+            }
+            .hero {
+                text-align: center;
+                padding: 1px;
+                position:relative;
+                margin-top: clamp(10px, 6vw, 20px);
+            }  
+            .hero h1 {
+                font-size: (40px, 6vw, 75px);
+                margin: 0;
+                text-shadow: 5px 5px 15px rgba(101, 67, 214, 0.8);
+            }
+            .hero p {
+                margin: 10px auto;
+                text-align: center;
+                color: #39d879;
+            }
+            .hero span:not(.letter) {
+                color: #244d34;
             }
         </style>
     </head>
     <body>
+        <section class="hero">
+            <h1>Welcome to Our Project</h1>
+            <p>Discover our journey and the purpose behind our work.</p>
+        </section>
         <nav class="navbar">
             <a href="../index.html" class="button">Home</a>
-            <a href="../Code/About-Page.html" class="button">About</a>
-            <a href="../Code/Contact-Page.html" class="button">Contact</a>
+            <a href="../Code/Projects.html" class="button">Projects</a>
         </nav>
         <div class="container">
-            <h1><img src="../Pictures/Code-Verse (transparentBG).png" alt="Logo" width="500" height="200"> </h1>
+            <h1></h1>
             <h2>About Us</h2>
             <p>We are a small duo learning coding and started this small project on hopes of expanding our knowledge and experimenting here, so we welcome you along for the ride.</p>
             <h2>The purpose</h2>

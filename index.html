@@ -60,23 +60,30 @@
                 color: #39d879;
                 margin: 0 auto;
                 margin-left: 20px;
-                border-radius: 5px;
                 padding: 10px;
                 font-family: monospace;
                 font-size: clamp(10px, 1.5vw, 18px);
-                border: 3px solid #01461d;
-                right: 20px;
-                bottom: 20px;
-                top: auto;
-                left: auto;
                 width: min(320px, 85vw);
-                max-width: none;
+                max-width: 100%;
                 background: rgba(0, 0, 0, 0.9);
                 border: 2px solid #01461d;
-                border-radius: 8px;
+                border-radius: 10px;
                 box-shadow: 0 0 20px rgba(0, 255, 80, 0.15);
                 z-index: 1000;
-            }   
+            }  
+            #output::-webkit-scrollbar {
+                width: 8px;
+            }
+            #output::-webkit-scrollbar-track {
+            background: black;
+            }
+            #output::-webkit-scrollbar-thumb {
+                background: #01461d;
+                border-radius: 10px;
+            }
+            #output::-webkit-scrollbar-thumb:hover {
+                background: #3bca75;
+            }
             #output {
                 height: 250px;
                 overflow-y: scroll;
@@ -146,14 +153,14 @@
             h1 {
                 font-family: monospace;
                 color: #5035a1;
-                text-shadow: 0 0 10px rgba(138, 116, 211, 0.5);
+                text-shadow: 5px 5px 10px rgba(95, 78, 151, 0.5);
                 font-size: clamp(40px, 1.5vw, 50px);
             }
             h2 {
 				font-family: monospace;
                 font-size: clamp(27px, 1.5vw, 37px);
                 color: #7d68bb;
-                text-shadow: 0 0 10px rgba(120, 80, 255, 0.5);
+                text-shadow: 3px 3px 10px rgba(120, 80, 255, 0.5);
             }
             h3 {
 				font-family: monospace;
@@ -206,7 +213,7 @@
                 <p>Learn. Play. Stupid-Stuff.</p>
                 <span>Welcome to our abode far from unwanted eyes.</span>
         </section>
-        <nav class="navbar"><a href="https://sainwolf2703.github.io/HTML-LINE/" class="button">Home</a><a href="Code/Projects.html" class="button">Projects</a></nav>
+        <nav class="navbar"><a href="Code/Projects.html" class="button">Projects</a><a href="Code/About-Page.html" class="button">About</a></nav>
         <div class="container">
             <h1><b>THIS IS THE START OF THE CODE-VERSE.</b></h1>
             <h2>Our lead developers:</h2>
