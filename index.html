@@ -115,6 +115,26 @@
                 font-family: monospace;
                 margin: 0;
             }
+            .letter {
+                display: inline-block;
+                animation: letterFlicker 3s infinite;
+                }
+            @keyframes letterFlicker {0%, 90%, 100% {opacity: 1;}
+                91% {opacity: 0.2;}
+                92% {opacity: 1;}
+                93% {opacity: 0.4;}
+                94% {opacity: 1;}
+            }
+            .letter:nth-child(1) { animation-delay: 0.1s; }
+            .letter:nth-child(2) { animation-delay: 0.7s; }
+            .letter:nth-child(3) { animation-delay: 0.3s; }
+            .letter:nth-child(4) { animation-delay: 1.2s; }
+            .letter:nth-child(5) { animation-delay: 0.5s; }
+            .letter:nth-child(6) { animation-delay: 0.9s; }
+            .letter:nth-child(7) { animation-delay: 0.2s; }
+            .letter:nth-child(8) { animation-delay: 1.4s; }
+            .letter:nth-child(9) { animation-delay: 0.6s; }
+            .letter:nth-child(10) { animation-delay: 1s; }
             a {
                  color: #9b7cff;
                 transition: 0.2s;
@@ -155,7 +175,7 @@
                 margin-top: clamp(40px, 6vw, 75px);
             }   
             .hero h1 {
-                font-size: clamp(40px, 6vw, 75px);
+                font-size: (40px, 6vw, 75px);
                 margin: 0;
                 text-shadow: 0 0 15px rgba(120, 80, 255, 0.8);
             }
@@ -164,18 +184,29 @@
                 text-align: center;
                 color: #39d879;
             }
-            .hero span {
+            .hero span:not(.letter) {
                 color: #244d34;
             }
         </style>
 </head>
     <body>
         <section class="hero">
-            <h1>&lt;CODE-VERSE&gt;</h1>
+            <h1>&lt;
+                <span class="letter">C</span>
+                <span class="letter">O</span>
+                <span class="letter">D</span>
+                <span class="letter">E</span>
+                <span class="letter">-</span>
+                <span class="letter">V</span>
+                <span class="letter">E</span>
+                <span class="letter">R</span>
+                <span class="letter">S</span>
+                <span class="letter">E</span>
+                &gt;</h1>
                 <p>Learn. Play. Stupid-Stuff.</p>
                 <span>Welcome to our abode far from unwanted eyes.</span>
         </section>
-        <nav class="navbar"><a href="https://sainwolf2703.github.io/HTML-LINE/" class="button">Home</a><a href="BubleeMan-Page.html" class="button">Projects</a></nav>
+        <nav class="navbar"><a href="https://sainwolf2703.github.io/HTML-LINE/" class="button">Home</a><a href="Code/Projects.html" class="button">Projects</a></nav>
         <div class="container">
             <h1><b>THIS IS THE START OF THE CODE-VERSE.</b></h1>
             <h2>Our lead developers:</h2>
